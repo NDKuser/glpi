@@ -6,7 +6,8 @@ mkdir -p $(dirname "$LOG_FILE")
 # Reconfigure DB
 bin/console glpi:database:configure \
   --config-dir=./tests/config --ansi --no-interaction \
-  --reconfigure --db-name=glpitest080 --db-host=db --db-user=root
+  --reconfigure --db-name=glpitest080 --db-host=db --db-user=root \
+  --log-deprecation-warnings
 
 # Execute update
 ## First run should do the migration (with no warnings).
